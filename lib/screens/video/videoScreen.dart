@@ -1,8 +1,6 @@
 import 'package:app_2_sales/controller/jsonController.dart';
+import 'package:app_2_sales/screens/video/videoPresentation.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-
-import '../components/VideoPlayer.dart';
 
 class VideoScreen extends StatefulWidget {
   const VideoScreen({super.key});
@@ -12,7 +10,7 @@ class VideoScreen extends StatefulWidget {
 }
 
 class _VideoScreenState extends State<VideoScreen> {
-  var url;
+  String? url;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +22,12 @@ class _VideoScreenState extends State<VideoScreen> {
           setState(() {
             url = response;
           });
+
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => VideoPresentation(urlVideo: url),
+              ));
         },
         child: Container(
           padding: const EdgeInsets.all(15),
@@ -60,15 +64,15 @@ class _VideoScreenState extends State<VideoScreen> {
           ),
         ),
       ),
-      if (url != null) ...[
+      /* if (url != null) ...[
         Container(
-          margin: EdgeInsets.only(top: 170),
+          margin: EdgeInsets.only(top: size.height * 0.27),
           height: size.height * 0.35,
           child: Video(
-            videoPlayerController: VideoPlayerController.network(url),
+            videoPlayerController: VideoPlayerController.network(url!),
           ),
         )
-      ]
+      ] */
     ]);
   }
 }

@@ -1,7 +1,7 @@
 import 'package:app_2_sales/components/header.dart';
-import 'package:app_2_sales/screens/audioScreen.dart';
-import 'package:app_2_sales/screens/videoScreen.dart';
-import 'package:app_2_sales/screens/pdfScreen.dart';
+import 'package:app_2_sales/screens/audio/audioScreen.dart';
+import 'package:app_2_sales/screens/video/videoScreen.dart';
+import 'package:app_2_sales/screens/pdf/pdfScreen.dart';
 import 'package:flutter/material.dart';
 
 class ScreenNavigation extends StatefulWidget {
