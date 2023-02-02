@@ -35,16 +35,20 @@ class ScreenNavigationState extends State<ScreenNavigation> {
         backgroundColor: Colors.transparent,
         appBar: const PreferredSize(
             preferredSize: Size.fromHeight(100), child: Header()),
-        body: PageView(
-          onPageChanged: setPage,
-          controller: controllerPages,
-          children: const [VideoScreen(), pdfScreen(), AudioScreen()],
+        body: Container(
+          padding: const EdgeInsets.all(20),
+          child: PageView(
+            onPageChanged: setPage,
+            controller: controllerPages,
+            children: const [VideoScreen(), pdfScreen(), AudioScreen()],
+          ),
         ),
         bottomNavigationBar: Container(
           height: size.height * 0.1,
-          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
           decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20), topRight: Radius.circular(20)),
               color: Color.fromRGBO(63, 63, 63, 1)),
           child: BottomNavigationBar(
             elevation: 0,
