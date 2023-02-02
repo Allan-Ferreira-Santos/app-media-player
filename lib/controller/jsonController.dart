@@ -4,21 +4,19 @@ import 'dart:math';
 import 'package:flutter/services.dart';
 
 class JsonController {
-  accessJson() async {
+  currentJson(String action) async {
     Map<String, dynamic> data = {};
 
     String response = await rootBundle.loadString('assets/content.json');
 
     print(response);
 
-    var url = jsonDecode(response);
-
-    data['video'] = url['video'];
-    data['audio'] = url['audio'];
-    data['pdf'] = url['pdf'];
+    data = jsonDecode(response);
 
     print('data' + data.toString());
 
-    return data;
+    print(data[action]);
+
+    return data[action];
   }
 }
