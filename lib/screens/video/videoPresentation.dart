@@ -4,7 +4,7 @@ import 'package:video_player/video_player.dart';
 import '../../components/VideoPlayer.dart';
 
 class VideoPresentation extends StatefulWidget {
-  final urlVideo;
+  final String? urlVideo;
   const VideoPresentation({this.urlVideo, super.key});
 
   @override
@@ -30,7 +30,8 @@ class _VideoPresentationState extends State<VideoPresentation> {
         height: size.height,
         width: size.width,
         child: Video(
-          videoPlayerController: VideoPlayerController.network(widget.urlVideo),
+          videoPlayerController:
+              VideoPlayerController.network(widget.urlVideo!),
         ),
       ),
     );

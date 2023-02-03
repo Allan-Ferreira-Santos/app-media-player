@@ -40,7 +40,7 @@ class ScreenNavigationState extends State<ScreenNavigation> {
           child: PageView(
             onPageChanged: setPage,
             controller: controllerPages,
-            children: const [VideoScreen(), pdfScreen(), AudioScreen()],
+            children: const [VideoScreen(), PdfScreen(), AudioScreen()],
           ),
         ),
         bottomNavigationBar: Container(
