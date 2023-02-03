@@ -13,7 +13,6 @@ class ScreenNavigation extends StatefulWidget {
 
 class ScreenNavigationState extends State<ScreenNavigation> {
   int selectedIndex = 0;
-
   PageController controllerPages = PageController();
 
   setPage(value) {

@@ -62,15 +62,6 @@ class _VideoScreenState extends State<VideoScreen> {
           ),
         ),
       ),
-      /* if (url != null) ...[
-        Container(
-          margin: EdgeInsets.only(top: size.height * 0.27),
-          height: size.height * 0.35,
-          child: Video(
-            videoPlayerController: VideoPlayerController.network(url!),
-          ),
-        )
-      ] */
     ]);
   }
 }
