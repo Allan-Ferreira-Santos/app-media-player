@@ -20,16 +20,15 @@ class _PdfScreenState extends State<PdfScreen> {
           children: [
             InkWell(
               onTap: () async {
-                String response = await JsonController().currentJson('pdf');
-                setState(() {
-                  url = response;
-                });
-
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => PdfPresentation(urlPdf: url),
                     ));
+                String response = await JsonController().currentJson('pdf');
+                setState(() {
+                  url = response;
+                });
               },
               child: Container(
                 padding: const EdgeInsets.all(15),
