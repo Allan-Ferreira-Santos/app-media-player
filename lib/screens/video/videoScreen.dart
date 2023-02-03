@@ -14,20 +14,18 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Column(children: [
       InkWell(
         onTap: () async {
-          String response = await JsonController().currentJson('video');
-          setState(() {
-            url = response;
-          });
-
           Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => VideoPresentation(urlVideo: url),
               ));
+          String response = await JsonController().currentJson('video');
+          setState(() {
+            url = response;
+          });
         },
         child: Container(
           padding: const EdgeInsets.all(15),

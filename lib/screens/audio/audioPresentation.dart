@@ -15,6 +15,13 @@ class _AudioPresentationState extends State<AudioPresentation> {
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
 
+  /*
+  * format Time
+  * @author  Allan F Santos
+  * @version 1.0 - 20230103 - initial release
+  * param int seconds - seconds
+  */
+
   String formatTime(int seconds) {
     return '${(Duration(seconds: seconds))}'.split('.')[0].padLeft(8, '0');
   }
